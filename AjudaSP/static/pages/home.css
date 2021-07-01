@@ -10,6 +10,7 @@
 
 header {
   grid-area: header;
+
 }
 
 #hand {
@@ -50,8 +51,8 @@ main.container {
 main h1 {
   font-size: clamp(10rem, 5vw, 10.8rem);
   position: relative;
-  top: 30%;
-  right: 30%;
+  top: 20%;
+  right: 20%;
 
   text-shadow: .3rem .3rem  rgba(0, 0, 0, .7);
 }
@@ -62,8 +63,8 @@ main h2 {
   font-weight: 300;
 
   position: relative;
-  top: 30%;
-  right: 30%;
+  top: 20%;
+  right: 20%;
 
   text-shadow: .2rem .2rem rgba(0, 0, 0, .7);
 }
@@ -76,8 +77,8 @@ main h2 {
   padding: 1rem;
   width: 15rem;
   position: relative;
-  top: 30%;
-  right: 30%;
+  top: 20%;
+  right: 20%;
 
   background-color: var(--button);
   border: none;

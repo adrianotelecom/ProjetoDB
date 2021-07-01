@@ -3,6 +3,22 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+# dados mackados
+registros = [
+   {
+     'nome': 'Ong A',
+     'url': ''
+   },
+   {
+     'nome': 'Ong B',
+     'url': ''
+   },
+   {
+     'nome': 'Ong C',
+     'url': ''
+   }
+ ]
+
 
 @app.route('/')
 def home():
@@ -14,7 +30,7 @@ def home():
 def action():
   return render_template(
     'room.html'
-  )
+  ) 
 
 if __name__ == '__main__':
   app.run(debug = True)
