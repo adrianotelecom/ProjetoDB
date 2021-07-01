@@ -52,6 +52,8 @@ main h1 {
   position: relative;
   top: 30%;
   right: 30%;
+
+  text-shadow: .3rem .3rem  rgba(0, 0, 0, .7);
 }
 
 main h2 {
@@ -62,6 +64,8 @@ main h2 {
   position: relative;
   top: 30%;
   right: 30%;
+
+  text-shadow: .3rem .3rem rgba(0, 0, 0, .7);
 }
 
 .button {
@@ -81,4 +85,5 @@ main h2 {
   box-shadow: .2rem .2rem rgba(0, 0, 0, .7);
 
   text-transform: uppercase;
+  text-shadow: .2rem .2rem rgba(0, 0, 0, .7);
 }
