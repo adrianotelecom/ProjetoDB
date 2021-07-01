@@ -3,22 +3,16 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-# dados mackados
-registros = [
-   {
-     'nome': 'Ong A',
-     'uri': ''
-   },
-   {
-     'nome': 'Ong B',
-     'url': ''
-   },
-   {
-     'nome': 'Ong C',
-     'url': ''
-   }
- ]
+user = 'lkccpgzi'
+password = 'OSxUaq-J4Nx1L_6562tvq2v-a9_BLrVm'
+host = 'tuffi.db.elephantsql.com'
+database = 'lkccpgzi'
 
+app.config['SQLACHEMY_DATABASE_URI'] = f'postgresql://{user}:{password}@{host}/{database}'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.secret_key = 'ProjetoDB'
+
+db = SQLAlchemy(app)
 
 @app.route('/')
 def home():
@@ -32,7 +26,7 @@ def action():
     'room.html'
   ) 
 
-@app.route('/create')
+@app.route('/room/create')
 def room():
   return render_template(
     'create.html',

@@ -33,6 +33,19 @@ body, button {
   color: var(--letter);
 }
 
+.hover {
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+  transition: all .5;
+  cursor: pointer;  
+}
+
+.hover:hover{
+  -moz-transform: scale(1.13);
+  -webkit-transform: scale(1.13);
+  transform: scale(1.13);
+}
+
 .container {
   width: 100%;
   margin: 0 auto;
