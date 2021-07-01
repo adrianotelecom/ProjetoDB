@@ -1,14 +1,15 @@
 .container {
-  display: flex;
+  display: block;
 
 }
 
 .left {
-  width: 10rem;
-  height: 10rem;
-  background: seagreen;
+  width: 180px;
+  height: 150px;
+  background-color: blue;
+  position: center;
+  left: 5px;
+  border: 3px;
+  display: block;
 }
 
-.right {
-  
-}
