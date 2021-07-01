@@ -32,5 +32,11 @@ def action():
     'room.html'
   ) 
 
+@app.route('/create')
+def room():
+  return render_template(
+    'create.html',
+  )
+
 if __name__ == '__main__':
   app.run(debug = True)
