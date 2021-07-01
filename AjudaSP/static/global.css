@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  --letter: #f8fbfd;
+  --letter-button: #f5f5ef;
+  --button: #f54236;
+
+
+  --title: 'Poppins';
+  --sub-title: 'Lato';
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+
+  background: #2193b0;
+  background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);
+  background: linear-gradient(to right, #6dd5ed, #2193b0);
+
+}
+
+body, button {
+  font-size: clamp(14px, 1.6rem, 2vw);
+  font-family: var(--title), sans-serif;
+  color: var(--letter);
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#heart {
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+  transition: all .5;
+}
+
+#heart:hover{
+  -moz-transform: scale(1.13);
+  -webkit-transform: scale(1.13);
+  transform: scale(1.13);
+}
+
+.button button {
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+  transition: all .5;
+}
+
+.button button:hover {
+  -moz-transform: scale(1.13);
+  -webkit-transform: scale(1.13);
+  transform: scale(1.13);
+}

@@ -1,0 +1,84 @@
+.container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 11.4rem 1fr;
+
+  grid-template-areas: 
+  'header header'
+  'left right';
+}
+
+header {
+  grid-area: header;
+}
+
+#hand {
+  grid-area: left;
+  background: url(../images/mao.png)
+  no-repeat top/contain;
+  /* background-position: -rem; */
+  background-position-y: 60%;
+
+  width: 60rem;
+  height: 60rem;
+}
+
+#heart {
+  grid-area: left;
+  background: url(../images/heart.png) 
+  no-repeat top/contain;
+  /* background-position: -rem; */
+  background-position-y: 30%;
+  margin-left: 16rem;
+
+  width: 20rem;
+  height: 20rem;
+}
+
+main {
+  grid-area: right;
+
+  display: flex;
+  align-items: center;
+  margin-top: -15rem;
+}
+
+main.container {
+  width: min(36.3rem, 100%);
+}
+
+main h1 {
+  font-size: clamp(10rem, 5vw, 10.8rem);
+  position: relative;
+  top: 30%;
+  right: 30%;
+}
+
+main h2 {
+  font-family: var(--sub-title);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 300;
+
+  position: relative;
+  top: 30%;
+  right: 30%;
+}
+
+.button {
+  padding-top: 2rem;
+}
+
+.button button {
+  padding: 1rem;
+  width: 15rem;
+  position: relative;
+  top: 30%;
+  right: 30%;
+
+  background-color: var(--button);
+  border: none;
+  border-radius: 2rem;
+  box-shadow: .2rem .2rem rgba(0, 0, 0, .7);
+
+  text-transform: uppercase;
+}
