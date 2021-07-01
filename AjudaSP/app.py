@@ -7,7 +7,7 @@ app = Flask(__name__)
 registros = [
    {
      'nome': 'Ong A',
-     'url': ''
+     'uri': ''
    },
    {
      'nome': 'Ong B',
