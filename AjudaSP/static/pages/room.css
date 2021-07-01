@@ -21,17 +21,6 @@
   left: -10%;
 
   border-radius: 1rem 1rem 0 1rem;
-
-  -moz-transition: all .5s;
-  -webkit-transition: all .5s;
-  transition: all .5;
-  cursor: pointer;  
-}
-
-.left:hover {
-  -moz-transform: scale(1.13);
-  -webkit-transform: scale(1.13);
-  transform: scale(1.13);
 }
 
 .left img {
@@ -45,15 +34,20 @@
   padding: 1rem;
   text-align: center;
 
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0,.4);
   margin-top: -.7rem;
   font-family: var(--title);
+
+  text-shadow: .1rem .1rem rgba(0, 0, 0);
 
 }
 
 .content{
   padding: 2rem;
   font-family: var(--sub-title);
+
+
+  text-shadow: .1rem .1rem rgba(0, 0, 0);
 }
 
 .right {
