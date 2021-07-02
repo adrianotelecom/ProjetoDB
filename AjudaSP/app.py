@@ -16,7 +16,7 @@ app.secret_key = 'ProjetoDB'
 db = SQLAlchemy(app)
 
 class Organizacoes(db.Model):
-  id = db.Column(db.Interger, primary_key = True)
+  id = db.Column(db.Integer, primary_key = True)
   nome_ong = db.Column(db.String(255), nullable = False)
   url_ong = db.Column(db.String(500), nullable = False)
 
