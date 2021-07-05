@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_sqlalchemy import (SQLAlchemy)
 
 app = Flask(__name__)
@@ -30,13 +30,13 @@ class organiza(db.Model):
   def read_all():
     return organiza.query.order_by(organiza.id.asc()).all()
   
-  # @staticmethod
-  # def resume():
-  #   return Organizacoes.query.get(registro_id)
+  @staticmethod
+  def resume():
+    return Organizacoes.query.get(registro_id)
 
-  # def save(self):
-  #   db.session.add(self)
-  #   db.session.commit()
+  def save(self):
+    db.session.add(self)
+    db.session.commit()
 
 @app.route('/')
 def home():
@@ -44,16 +44,25 @@ def home():
     'home.html',
   )
 
-@app.route('/action')
+@app.route('/room')
 def action():
   return render_template(
     'room.html'
   ) 
 
-@app.route('/room/create')
+@app.route('/room/create', methods = ("GET", "POST"))
 def signUp():
+  id_atribuido = None
+
+  if request.method == 'POST':
+    form = request.form
+    registro = organiza(form['nome'], form['url'])
+    registro.save()
+    id_atribuido = registro.id
+
   return render_template(
     'create.html',
+    id_atribuido = id_atribuido
   )
 
 @app.route('/room/read')
@@ -68,10 +77,4 @@ def partners():
 
 if __name__ == '__main__':
   app.run(debug = True)
-
-  sdfjsdofds
-
-
-  dsjiofjdsif
-  jidsojfiods
   
