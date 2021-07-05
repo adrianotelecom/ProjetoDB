@@ -1,0 +1,25 @@
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section .logo img{
+  width: 20rem;
+  height:20rem ;
+  padding: 2rem;
+
+}
+
+section .logo p {
+  text-align: center;
+
+  font-family: var(--text-roboto);
+  font-weight: 600;
+  text-shadow: .15rem .15rem  rgb(0, 0, 0);
+}

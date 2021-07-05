@@ -12,8 +12,11 @@ html {
 
   --title: 'Poppins';
   --sub-title: 'Lato';
-  font-size: 62.5%;
+  --text-light:  'Shadows Into Light';
+  --text-dancing: 'Dancing Script';
+  --text-roboto: 'Roboto';
 
+  font-size: 62.5%;
 }
 
 body {
