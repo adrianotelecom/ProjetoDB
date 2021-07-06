@@ -1,5 +1,6 @@
 body {
-  background: var(--background);
+  background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
+
 }
 
 .container {
@@ -28,16 +29,17 @@ header {
   height: 60rem;
 }
 
-#heart {
+#heart{
   grid-area: left;
-  background: url(../images/heart.png) 
-  no-repeat top/contain;
-  /* background-position: -rem; */
-  background-position-y: 30%;
   margin-left: 16rem;
+  font-size: 25rem;
 
-  width: 20rem;
-  height: 20rem;
+  position: relative;
+  top: -10rem;
+}
+
+#heart .fa-heart {
+  color: #f54236;
 }
 
 main {

@@ -9,7 +9,8 @@
 }
 
 body {
-    background: var(--background);
+    background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
+
     color: var(--letter);
     font-weight: 500;
     display: flex;
