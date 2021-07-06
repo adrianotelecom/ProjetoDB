@@ -1,3 +1,5 @@
+from operator import methodcaller
+import re
 from flask import Flask, render_template, request
 from flask_sqlalchemy import (SQLAlchemy)
 
@@ -33,11 +35,21 @@ class organiza(db.Model):
     return organiza.query.order_by(organiza.id.asc()).all()
   
   @staticmethod
-  def resume():
+  def read_single(registro_id):
     return organiza.query.get(registro_id)
 
   def save(self):
     db.session.add(self)
+    db.session.commit()
+  
+  def update(self, new_data):
+    self.nome_ong = new_data.nome_ong
+    self.url_image = new_data.url_image
+    self.url_ong = new_data.url_ong
+    self.hotkey = new_data.hotkey
+
+  def delete(self):
+    db.session.delete(self)
     db.session.commit()
 
 @app.route('/')
@@ -71,11 +83,36 @@ def signUp():
 def partners():
   registros =  organiza.read_all()
   return render_template(
-  'read.html',
-  registros = registros,
-  # close = close,
+    'read.html',
+    registros = registros
 )
 
+@app.route('/room/read/update/<registro_id>', methods = ('GET', 'POST'))
+def details(registro_id):
+  sucesso = None
+  registro = organiza.read_single(registro_id)
+
+  if request.method == 'POST':
+    form = request.form
+    new_data = organiza(form['nome'], form['image'], form['ong'], form['hotkey'])
+    registro.update(new_data)
+    sucesso = True
+
+  return render_template(
+    'update.html',
+    registro = registro,
+    sucesso = sucesso,
+    registro_id = registro_id
+  )
+
+@app.route('/room/read/delete/<registro_id>')
+def delete(registro_id):
+  registro = organiza.read_single(registro_id)
+
+  return render_template(
+    'delete.html',
+    registro = registro
+  )
 
 if __name__ == '__main__':
   app.run(debug = True)
