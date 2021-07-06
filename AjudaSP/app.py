@@ -22,9 +22,11 @@ class organiza(db.Model):
   url_ong = db.Column(db.String(255), nullable = False)
   hotkey = db.Column(db.String(255), nullable = False)
 
-  def __init__(self, nome_ong, url_ong):
+  def __init__(self, nome_ong, url_image, url_ong, hotkey):
     self.nome_ong = nome_ong
+    self.url_image = url_image
     self.url_ong = url_ong
+    self.hotkey = hotkey
   
   @staticmethod
   def read_all():
@@ -32,7 +34,7 @@ class organiza(db.Model):
   
   @staticmethod
   def resume():
-    return Organizacoes.query.get(registro_id)
+    return organiza.query.get(registro_id)
 
   def save(self):
     db.session.add(self)
@@ -56,7 +58,7 @@ def signUp():
 
   if request.method == 'POST':
     form = request.form
-    registro = organiza(form['nome'], form['url'])
+    registro = organiza(form['nome'], form['image'], form['ong'], form['hotkey'])
     registro.save()
     id_atribuido = registro.id
 

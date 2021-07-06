@@ -1,3 +1,7 @@
+body {
+  background: var(--background);
+}
+
 .container {
   display: grid;
   grid-template-columns: 60% 40%;

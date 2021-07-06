@@ -1,3 +1,7 @@
+body {
+  background: var(--background);
+}
+
 .container-room {
   display: flex;
   justify-content:space-evenly;
