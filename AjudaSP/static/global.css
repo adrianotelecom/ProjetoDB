@@ -5,7 +5,18 @@
 }
 
 html {
-  --letter: #f8fbfd;
+  --background: #1B2029;
+  --background-span: rgba(255, 255, 255, 0.3);
+  --background-submit: #6C63FF; 
+  --main: #8880FE;
+  --input-background: #161923;
+  --input-color: rgba(166, 166, 166);
+  --submit: rgb(255, 255, 255);
+  --submit-hover: #5952d4;
+  --circle-color: linear-gradient(45deg, #E8CBC0, #636FA4);
+  --border-input: #040B18;
+
+  --letter: #FFFAFA;
   --letter-button: #f5f5ef;
   --button: #f54236;
 
@@ -22,11 +33,6 @@ html {
 body {
   display: flex;
   height: 100vh;
-
-  background: #2193b0;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
   overflow: hidden;
 }
 
