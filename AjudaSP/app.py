@@ -38,6 +38,10 @@ class organiza(db.Model):
   def read_single(registro_id):
     return organiza.query.get(registro_id)
 
+  @staticmethod
+  def readSingle_ByName(nome_ong):
+    return organiza.query.filter_by(nome_ong = nome_ong)
+
   def save(self):
     db.session.add(self)
     db.session.commit()
@@ -105,14 +109,30 @@ def details(registro_id):
     registro_id = registro_id
   )
 
-@app.route('/room/read/delete/<registro_id>')
-def delete(registro_id):
-  registro = organiza.read_single(registro_id)
+@app.route('/room/read/delete/<nome_ong>')
+def delete(nome_ong):
+  registro = organiza.readSingle_ByName(nome_ong)
 
   return render_template(
     'delete.html',
     registro = registro
   )
+
+@app.route('/room/read/delete/<nome_ong>/confirmed')
+def deleteConfirmed(nome_ong):
+  sucesso = None
+  registro = organiza.readSingle_ByName(nome_ong)
+
+  if registro:
+    registro.delete()
+    sucesso = True
+  
+  return render_template(
+    'delete.html',
+    registro = registro,
+    sucesso = sucesso
+  )
+
 
 if __name__ == '__main__':
   app.run(debug = True)
