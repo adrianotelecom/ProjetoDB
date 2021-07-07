@@ -3,7 +3,10 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #17141d;
+    background: rgb(245,66,54);
+    background: linear-gradient( 90deg, rgba(245,66,54,1) 0%, rgba(252,169,169,1) 50%, rgba(245,66,54,1) 100);
+    
+    
     color: white;
     font-family: 'DM Mono', monospace;
 }

@@ -1,5 +1,3 @@
-from operator import methodcaller
-import re
 from flask import Flask, render_template, request
 from flask_sqlalchemy import (SQLAlchemy)
 
@@ -38,19 +36,15 @@ class organiza(db.Model):
   def read_single(registro_id):
     return organiza.query.get(registro_id)
 
-  @staticmethod
-  def readSingle_ByName(nome_ong):
-    return organiza.query.filter_by(nome_ong = nome_ong)
-
   def save(self):
     db.session.add(self)
     db.session.commit()
   
-  def update(self, new_data):
-    self.nome_ong = new_data.nome_ong
-    self.url_image = new_data.url_image
-    self.url_ong = new_data.url_ong
-    self.hotkey = new_data.hotkey
+  def update(self, newData):
+    self.nome_ong = newData.nome_ong
+    self.url_image = newData.url_image
+    self.url_ong = newData.url_ong
+    self.hotkey = newData.hotkey
 
   def delete(self):
     db.session.delete(self)
@@ -92,36 +86,36 @@ def partners():
 )
 
 @app.route('/room/read/update/<registro_id>', methods = ('GET', 'POST'))
-def details(registro_id):
+def update(registro_id):
   sucesso = None
   registro = organiza.read_single(registro_id)
 
   if request.method == 'POST':
     form = request.form
-    new_data = organiza(form['nome'], form['image'], form['ong'], form['hotkey'])
-    registro.update(new_data)
+
+    newData = organiza(form['nome'], form['image'], form['ong'], form['hotkey'])
+    registro.update(newData)
     sucesso = True
 
   return render_template(
     'update.html',
     registro = registro,
-    sucesso = sucesso,
-    registro_id = registro_id
+    sucesso = sucesso
   )
 
-@app.route('/room/read/delete/<nome_ong>')
-def delete(nome_ong):
-  registro = organiza.readSingle_ByName(nome_ong)
+@app.route('/room/read/delete/<registro_id>')
+def delete(registro_id):
+  registro = organiza.read_single(registro_id)
 
   return render_template(
     'delete.html',
     registro = registro
   )
 
-@app.route('/room/read/delete/<nome_ong>/confirmed')
-def deleteConfirmed(nome_ong):
+@app.route('/room/read/delete/<registro_id>/confirmed')
+def deleteConfirmed(registro_id):
   sucesso = None
-  registro = organiza.readSingle_ByName(nome_ong)
+  registro = organiza.read_single(registro_id)
 
   if registro:
     registro.delete()

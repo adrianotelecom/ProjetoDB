@@ -1,8 +1,21 @@
-body {
-  background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
-
+.banner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 1);
 }
 
+.banner video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  background: rgba(0, 0, 0, 1);
+}
 .container {
   display: grid;
   grid-template-columns: 60% 40%;
@@ -18,27 +31,29 @@ header {
 
 }
 
-#hand {
+.container #hand {
   grid-area: left;
-  background: url(../images/mao.png)
-  no-repeat top/contain;
-  /* background-position: -rem; */
-  background-position-y: 60%;
+  margin-left: 16rem;
+  font-size: 25rem;
 
-  width: 60rem;
-  height: 60rem;
+  position: relative;
+  top: 30%;
+  left: -10%;
+  text-shadow: .5rem .5rem rgba(0, 0, 0, 1);
 }
 
-#heart{
+.container #heart{
   grid-area: left;
   margin-left: 16rem;
   font-size: 25rem;
 
   position: relative;
   top: -10rem;
+  left: -5rem;
+  text-shadow: .5rem .5rem rgba(0, 0, 0, 1);
 }
 
-#heart .fa-heart {
+.container #heart .fa-heart {
   color: #f54236;
 }
 
@@ -60,19 +75,22 @@ main h1 {
   top: 20%;
   right: 20%;
 
-  text-shadow: .3rem .3rem  rgba(0, 0, 0, .7);
+  text-shadow: .3rem .3rem  rgba(0, 0, 0, 1);
 }
 
 main h2 {
-  font-family: var(--sub-title);
+  font-family: var(--title);
   font-size: clamp(2rem, 5vw, 2.8rem);
-  font-weight: 300;
+  font-weight: 500;
+  text-transform: uppercase;
+  
 
   position: relative;
   top: 20%;
   right: 20%;
 
-  text-shadow: .1rem .1rem rgba(0, 0, 0, .7);
+  text-shadow: .2rem .2rem rgba(0, 0, 0, 1);
+  /* color:; */
 }
 
 .button {
@@ -93,4 +111,4 @@ main h2 {
 
   text-transform: uppercase;
   text-shadow: .2rem .2rem rgba(0, 0, 0, .7);
-}
+} 
