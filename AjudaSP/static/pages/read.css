@@ -3,8 +3,9 @@
 body {
     padding: 0;
     margin: 0;
-    background: rgb(245,66,54);
-    background: linear-gradient( 90deg, rgba(245,66,54,1) 0%, rgba(252,169,169,1) 50%, rgba(245,66,54,1) 100);
+    background: rgb(59,89,152);
+    background: linear-gradient(90deg, rgba(59,89,152,1) 0%, rgba(0,149,167,1) 48%, rgba(59,89,152,1) 98%);
+    
     
     
     color: white;
@@ -14,24 +15,9 @@ body {
 .card-list {
     display: flex;
     padding: 3rem;
-    overflow-x: scroll;
-}
+    overflow: hidden;
 
-
-.card-list::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
 }
-.card-list::-webkit-scrollbar-thumb {
-    background: #201c29;
-    border-radius: 10px;
-    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
-}
-
-.card-list::-webkit-scrollbar-track {
-    background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
-}
-
 
 .card {
     display: flex;
@@ -45,11 +31,10 @@ body {
 
 
 .card {
-  /* ... */
 
   border-radius: 16px;
-  background: #17141d;
-  box-shadow: -1rem 0 3rem #000;
+  background: linear-gradient(90deg, rgba(59,89,152,1) 0%, rgba(0,149,167,1) 48%, rgba(59,89,152,1) 98%);
+  box-shadow: -1rem 0 1rem rgba(0,0,0,.7);
 
   transition: .2s;
 }
@@ -89,7 +74,7 @@ body {
   width: 60px;
   height: 48px;
   fill: none;
-  stroke: #ff8a00;
+  stroke: rgb(245,66,54);
   stroke-width: 8;
   stroke-linecap: round;
 }
@@ -101,7 +86,7 @@ body {
 .card-header p {
   font-size: 14px;
   margin: 0 0 1rem;
-  color: #7a7a8c;
+  color: whitesmoke;
 }
 
 .card-header h2 {
@@ -111,7 +96,7 @@ body {
 }
 
 .card-header h2:hover {
-  background: linear-gradient(90deg,#ff8a00,#e52e71);
+  background: linear-gradient(90deg,rgb(245,66,54),#e52e71);
   text-shadow: none;
   background-clip: text;
   -webkit-background-clip: text;
@@ -124,24 +109,27 @@ body {
   line-height: 2;
   margin-bottom: 0;
   position: relative;
-  left: 20%
+  left: 12%
 }
 
 .tags a {
   font-style: normal;
   font-weight: 700;
   font-size: .5rem;
-  color: #7a7a8c;
+  color: rgb(245,66,54);
   text-transform: uppercase;
   font-size: 1.3rem;
-  border: 3px solid #28242f;
+  border: 3px solid whitesmoke;
   border-radius: 2rem;
   padding: .2rem .85rem .25rem;
   position: relative;
+
+  text-decoration: none;
+  color: inherit;
 }
 
 .tags a:hover {
-  background: linear-gradient(90deg,#ff8a00,#e52e71);
+  background: linear-gradient(90deg,rgb(245,66,54),#e52e71);
   text-shadow: none;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
