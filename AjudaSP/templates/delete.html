@@ -12,15 +12,42 @@
   <title>Ajuda SP</title>
 
 </head>
-
   <body>
+    {% if sucesso %}
     <main>
       <h1>Removido com sucesso!</h1>
       <form action="" method="POST">
         <a href="/room">Voltar</a>
       </form>
     </main>
+    
+    {% elif registro %}
+    <main>
+      <h1>Excluir esta ONG?</h1>
+      <form action="" method="POST">
+          <label for="nome">
+              <span>Nome</span>
+              <input type="text" id="nome" name="nome">
+          </label>
+          <a href="" id="button-voltar">
+            voltar
+          </a>
+          <a href="/room/read/delete/{{registro.nome_ong}}/confirmed" class="#button-remover">
+            remover
+          </a>
+      </form>
+    </main>
 
+    {% else %}
+    <main>
+      <h1>ONG não encontrada</h1>
+      <form action="" method="POST">
+        <a href="">
+          <input type="submit" value="Voltar" id="button-voltar">
+        </a>
+      </form>
+    </main>
+    {% endif  %}
   </body>
 
 </html>
