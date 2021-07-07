@@ -66,7 +66,7 @@ main form a {
 
 /* registro  */
 
-main form input {
+main input[type = 'submit'] {
     background: var(--input-background);
     width: 300px;
     height: 50px;
@@ -79,7 +79,7 @@ main form input {
     border-radius: 8px;
 }
 
-main form a input {
+main a input[type = 'submit'] {
     cursor: pointer;
     width: 50%;
     margin-top: 4rem;
@@ -92,30 +92,17 @@ main form a input {
     align-items: center;
 }
 
-main form a:hover {
+main a:hover {
     background: var(--submit-hover);
 }
-main form a #button-voltar{
+
+main a #button-voltar{
     position: relative;
     left: 35%;
 }
 
-main form a #button-remover{
+main a #button-remover{
     position: relative;
     top: -34.5%;
     left: -40%;
-}
-
-@media only screen and (max-width: 450px) {
-    main h1 {
-        font-size: 2rem;
-    }
-
-    main .alternative span {
-        font-size: 0.8rem;
-    }
-
-    main form label span, main form input[type="submit"] {
-        font-size: 1rem;
-    }
 }

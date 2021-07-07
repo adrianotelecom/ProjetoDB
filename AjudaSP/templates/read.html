@@ -25,7 +25,7 @@
         </header>
 
         <div class="card-author">
-          <a class="author-avatar" href="#">
+          <a class="author-avatar" href="{{registro.url_ong}}">
             <img src="{{registro.url_image}}" />
           </a>
           <svg class="half-circle" viewBox="0 0 106 57">
@@ -39,11 +39,10 @@
         </div>
         
         <div class="tags">
-          <a href="/room/read/update/{{registro.nome_ong}}" id="modal" data-modal="modal">Update</a>
-          <a href="/room/read/delete/{{registro.nome_ong}}">Delete</a>
+          <a href="/room/read/update/{{registro.id}}" id="modal" data-modal="modal">Update</a>
+          <a href="/room/read/delete/{{registro.id}}">Delete</a>
         </div>
       </article>
-      <!-- Add more cards here -->
     </section>
     {% endfor %}
 
