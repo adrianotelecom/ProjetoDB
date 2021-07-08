@@ -46,6 +46,8 @@ class organiza(db.Model):
     self.url_ong = newData.url_ong
     self.hotkey = newData.hotkey
 
+    self.save()
+
   def delete(self):
     db.session.delete(self)
     db.session.commit()

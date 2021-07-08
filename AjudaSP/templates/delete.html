@@ -23,26 +23,21 @@
     
     {% elif registro %}
     <main>
-      <h1>Excluir a ONG?</h1>
+      <h1>Excluir esta ONG?</h1>
       <form action="" method="POST">
-          <a href="/room/read" id="button-voltar">
-            voltar
+          <a href="/room/read/delete/{{registro.id}}/confirmed" id="button-voltar">
+            Remover
           </a>
-          <a href="/room/read/delete/{{registro.id}}/confirmed" class="#button-remover">
-            remover
+          <a href="/room" class="#button-remover">
+            Voltar
           </a>
       </form>
     </main>
-
-    {% else %}
-    <main>
-      <h1>ONG não encontrada</h1>
-      <form action="" method="POST">
-        <a href="">
-          <input type="submit" value="Voltar" id="button-voltar">
-        </a>
-      </form>
-    </main>
+    <section class="images">
+      <div class="circle">
+          <img src="/static/images/delete.png" alt="">
+      </div>
+  </section>
     {% endif  %}
   </body>
 

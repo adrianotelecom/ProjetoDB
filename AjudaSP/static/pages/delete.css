@@ -8,7 +8,7 @@
 }
 
 body {
-    background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
+    background: #7DABEA;
 
     color: var(--letter);
     font-weight: 500;
@@ -25,14 +25,17 @@ main {
     justify-content: center;
 
     position: relative;
-    left: 25%;
+    left: 6%;
+    top: -10%;
 }
 
 main h1 {
-    color: var(--main);
     font-size: 4rem;
     margin-bottom: 3rem;
     text-align: center;
+
+
+    text-shadow: .2rem .2rem rgb(0, 0, 0)
 }
 
 main form {
@@ -51,7 +54,7 @@ main form a {
     border: none;
     border-radius: 32px;
 
-    background: var(--background-submit);
+    background: #FF5757; 
     color: var(--submit);
     font-size: 1.5rem;
 
@@ -61,6 +64,8 @@ main form a {
 
     text-decoration: none;
     color: inherit;
+
+    box-shadow: -.2rem 0 .2rem .2rem rgba(0,0,0,.7);
 
 }
 
@@ -85,11 +90,12 @@ main a input[type = 'submit'] {
     margin-top: 4rem;
     border: none;
     border-radius: 32px;
-    background: var(--background-submit);
+    background: #FF5757; 
     color: var(--submit);
     font-size: 1.5rem;
     transition: all .3s ease-in-out;
     align-items: center;
+
 }
 
 main a:hover {
@@ -105,4 +111,26 @@ main a #button-remover{
     position: relative;
     top: -34.5%;
     left: -40%;
+}
+
+section.images {
+    width: 50vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 4rem;
+}
+
+section.images img {
+    width: 100%;
+}
+
+section.images .circle img {
+    height: 150%;
+    width: 150%;
+    z-index: -1;
+    
+    position: relative;
+    left: -25rem;
+    top: 5rem;
 }

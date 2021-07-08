@@ -5,60 +5,59 @@ body {
   padding: 0;
   margin: 0;
 
-  background: rgb(59,89,152);
-  background: linear-gradient(90deg, rgba(59,89,152,1) 0%, rgba(0,149,167,1) 48%, rgba(59,89,152,1) 98%);
+  background: #7DABEA;
 
   color: white;
   font-family: 'DM Mono', monospace;
+  font-size: 1.2rem;
 }
 
-.card-one {
+.container {
   display: flex;
-  margin-top: 10rem;
-  margin-left: -20rem;
-  padding: 3rem;
-  overflow: hidden;
-}
+  align-items: center;
+  justify-content: center;
 
-.card-one a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.card-two {
-  display: flex;
-  margin-top: 10rem;
-  margin-left: 40rem;
-  padding: 3rem;
-  overflow: hidden;
-}
-
-.card-two a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.card {
-  
-  display: flex;
-  position: absolute;
-  flex-direction: column;
-  margin-left: 50rem;
-  height: 35rem;
   width: 25rem;
-  min-width: 25rem;
-  padding: 1.5rem;
-
+  height: 50rem;
 }
 
+.bg {
+  position: relative;
+  left: 38rem;
+  top: 10rem;
 
-.card {
+  width: 30rem;
+  height: 50rem;
+}
+
+section .card {
+  width: 20rem;
+  height: 30rem;
+
+  position: relative;
+  top: -4rem;
+  left: -40rem;
 
   border-radius: 1.6rem;
-  background: linear-gradient(90deg, rgba(59,89,152,1) 0%, rgba(0,149,167,1) 48%, rgba(59,89,152,1) 98%);
-  box-shadow: -1rem 0 1rem rgba(0,0,0,.7);
-
+  background: #7DABEA;
+  box-shadow: -.5rem 0 .5rem .5rem rgba(0,0,0,.7);
   transition: .2s;
+
+}
+
+section .card { 
+  padding: 3rem;
+  overflow: hidden;
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+} 
+
+.card-two {
+  position: relative;
+  left: -25rem;
 }
 
 .card:hover {
@@ -69,37 +68,81 @@ body {
   transform: translateX(13rem);
 }
 
-
 .card:not(:first-child) {
-  margin-left: -130px;
+  margin-left: -130rem;
 }
 
-.card-header {
+
+header {
   margin-bottom: auto;
+
+  width: 20rem;
+  height: 30rem;
 }
 
-.card-header i {
-  font-size: 8rem;
+header i {
+  font-size: 4rem;
   margin: 0 0 1rem;
   position: relative;
-  left: 28%;
+  left: 22%;
   color: whitesmoke;
 }
 
-.card-header h2 {
-  font-size: 3rem;
+header h2 {
+  font-size: 2rem;
   margin: .25rem 0 auto;
   cursor: pointer;
-  text-align: center;
+
   position: relative;
 }
 
-.card-header p {
-  font-size: 1.5rem;
+header .letter{
+  margin-left: 2rem;
+}
+
+header p {
+  font-size: 1.2rem;
   margin: .25rem 0 auto;
-  text-align: center;
+
+  padding: 2rem;
   position: relative;
-  top: 25%;
+  top: 6rem;
+  left: -2rem;
+  
+}
+
+.button {
+  width: 15rem;
+  height: 4.9rem;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  margin-top: 45rem;
+  margin-left: 23rem; 
+
+  border-radius: 3.2rem;
+  background: #FF5757;
+  font-family: var(--title);
+  font-size: 1.5rem;
+  box-shadow: -.2rem 0 .2rem .2rem rgba(0,0,0,.7);
+  transition: .2s;
+}
+
+.button a {
+  position: relative;
+  left: 4.5rem;
+  top: 1rem;
+
+  text-decoration: none;
+  color: inherit;
+
+  font-size: 1.8rem;
+}
+
+.button:hover {
+  background: var(--submit-hover)
 }
 
 .card-header h2:hover {
