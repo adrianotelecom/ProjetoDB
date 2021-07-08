@@ -57,7 +57,7 @@ header {
 }
 
 .container #heart .fa-heart {
-  color: #3B5998;
+  color: #FF5757; 
 
 }
 
@@ -108,7 +108,7 @@ main h2 {
   top: 20%;
   right: 20%;
 
-  background-color: #3B5998;
+  background-color: #FF5757; 
   border: none;
   border-radius: 2rem;
   box-shadow: .2rem .2rem rgba(0, 0, 0, .7);
